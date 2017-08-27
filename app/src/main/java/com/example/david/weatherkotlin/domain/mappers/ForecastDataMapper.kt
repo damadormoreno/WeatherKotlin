@@ -13,9 +13,9 @@ import com.example.david.weatherkotlin.domain.model.Forecast as ModelForecast
  * Created by david on 21/08/17.
  */
 class ForecastDataMapper{
-    fun convertFromDataModel(forecast: ForecastResult): ForecastList{
-        return ForecastList(forecast.city.name, forecast.city.country, convertForecastListToDomain(forecast.list))
-    }
+    fun convertFromDataModel(forecast: ForecastResult): ForecastList =
+            ForecastList(forecast.city.name, forecast.city.country, convertForecastListToDomain(forecast.list))
+
     private fun convertForecastListToDomain(list: List<Forecast>): List<ModelForecast>{
         return list.mapIndexed { i, forecast ->
             val dt = Calendar.getInstance().timeInMillis + TimeUnit.DAYS.toMillis(i.toLong())
@@ -33,6 +33,5 @@ class ForecastDataMapper{
         return df.format(date)
     }
 
-    private fun generateIconUrl(iconCode: String): String =
-            "http://openweathermap.org/img/w/$iconCode.png"
+    private fun generateIconUrl(iconCode: String) = "http://openweathermap.org/img/w/$iconCode.png"
 }

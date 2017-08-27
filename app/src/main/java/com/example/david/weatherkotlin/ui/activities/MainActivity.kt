@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView
 import com.example.david.weatherkotlin.R
 import com.example.david.weatherkotlin.domain.commands.RequestForecastCommand
 import com.example.david.weatherkotlin.ui.adapters.ForecastListAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
@@ -25,8 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         //val forecastList = findViewById(R.id.forecast_list) as RecyclerView
         //anko
-        val forecastList:RecyclerView = find(R.id.forecast_list)
+        //val forecastList:RecyclerView = find(R.id.forecast_list)
 
+        //hacemos uso de extensions
         forecastList.layoutManager = LinearLayoutManager(this)
         //forecastList.adapter = ForecastListAdapter(items)
 
